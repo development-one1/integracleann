@@ -1,0 +1,124 @@
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f8f9fa;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.serviciosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.servicioCard {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.servicioCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.icono {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.servicioCard h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.servicioCard p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.listaCaracteristicas {
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+.listaCaracteristicas li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkmark {
+  color: #27ae60;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.botonCotizar {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.botonCotizar:hover {
+  background-color: #2980b9;
+}
+
+.cta {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  margin-top: 2rem;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.botonContacto {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botonContacto:hover {
+  background-color: #c0392b;
+}

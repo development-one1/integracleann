@@ -1,0 +1,118 @@
+/* styles/QuienesSomos.module.css */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  box-shadow: 0 12px 24px 4px rgba(0, 0, 0, 0.50);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+
+@keyframes talk {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.chat {
+  display: inline-block;
+  animation: talk 1.8s infinite ease-in-out;
+  margin-right: 5px;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 0px #ffd700);
+  }
+  50% {
+    transform: scale(1.2) rotate(20deg);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 6px #ffd700);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 0px #ffd700);
+  }
+}
+
+.sparkle {
+  display: inline-block;
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #000;
+  width: 0;
+  animation: typing 4s steps(60, end) forwards, blink 0.7s step-end infinite;
+}
+
