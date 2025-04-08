@@ -1,39 +1,36 @@
+// pages/blog.js
+
 import { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 
-export default function HomePage() {
+export default function BlogPage() {
   const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('http://localhost:4000/api/blog');
-        if (!res.ok) {
-          throw new Error('Error al obtener los datos');
-        }
-        const data = await res.json();
-        setBlogs(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+    // Datos estáticos simulados
+    const posts = [
+      {
+        slug: "primer-post",
+        title: "Mi Primer Post",
+        content: "<p>Este es el contenido del primer post. ¡Bienvenido a mi blog!</p>",
+      },
+      {
+        slug: "segundo-post",
+        title: "Otro Post Interesante",
+        content: "<p>Contenido del segundo post. Aquí hablamos de cosas más profundas.</p>",
+      },
+    ];
 
-  if (loading) return <p>Cargando...</p>;
-  if (error) return <p>Error: {error}</p>;
+    setBlogs(posts);
+  }, []);
 
   return (
     <Layout>
       <h5>Esto es blog</h5>
       {blogs.map((blog) => (
-        <div key={blog.id}>
+        <div key={blog.slug}>
           <h2>{blog.title}</h2>
-          <p>{blog.content}</p>
+          <div dangerouslySetInnerHTML={{ __html: blog.content }} />
         </div>
       ))}
     </Layout>
