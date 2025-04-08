@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import '../styles/global.css';
+import '../styles/globales.css'
+
 import Preloader from '../components/Preloader';
 import ConsentBanner from '../components/ConsentBanner';
 
