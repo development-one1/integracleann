@@ -1,8 +1,16 @@
-// pages/blog/[slug].js
-import { getBlogPostBySlug } from '../../lib/strapi';
+import { getAllBlogSlugs, getBlogPostBySlug } from '../../lib/strapi';
 
 export async function getStaticPaths() {
-  // Lógica para generar paths...
+  const slugs = await getAllBlogSlugs(); // ['post-1', 'post-2', ...]
+  
+  const paths = slugs.map((slug) => ({
+    params: { slug },
+  }));
+
+  return {
+    paths,
+    fallback: false, // Puedes cambiar a true o 'blocking' si lo necesitas
+  };
 }
 
 export async function getStaticProps({ params }) {
@@ -11,5 +19,10 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PostPage({ post }) {
-  // Renderizar el post...
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </article>
+  );
 }
