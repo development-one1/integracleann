@@ -1,0 +1,109 @@
+/* Contenedor principal */
+.galeriaContainer {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Encabezado */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  color: #2A5CAA;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid de servicios */
+.gridServicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Card */
+.servicioCard {
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.servicioCard:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+.imagenWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.imagen {
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Contenido */
+.cardContenido {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cardContenido h2 {
+  font-size: 1.2rem;
+  color: #2A5CAA;
+  margin: 0;
+}
+
+.cardContenido p {
+  color: #555;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.etiqueta {
+  background-color: #f0f7ff;
+  color: #2A5CAA;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gridServicios {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .imagenWrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .cardContenido {
+    padding: 1rem;
+  }
+}
