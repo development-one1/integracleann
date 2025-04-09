@@ -1,6 +1,6 @@
 import { FaShieldAlt, FaHeadset, FaCalendarCheck, FaStar } from 'react-icons/fa';
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image'; // ✅ Asegúrate de importar esto
+import Image from 'next/image';
 import Comentarios from "./Comentarios";
 import styles from '../styles/index.module.css';
 
@@ -38,23 +38,23 @@ const Home = () => {
 
       {/* Sección Hero con fondo local */}
       <div className={styles.heroSection}>
-  <div className={styles.imageWrapper}>
-    <Image 
-      src="/people.png"
-      alt="Fondo de Limpiezas Integrales"
-      fill
-      priority
-      style={{ objectFit: 'cover' }}
-    />
-    <div className={styles.blueOverlay}></div> {/* 👉 Capa animada */}
-  </div>
-  <div className={styles.heroContent}>
-    <h1 className={styles.heroTitle}>Integra Clean</h1>
-    <p className={styles.heroSubtitle}>
-      Limpieza profesional y compromiso garantizado
-    </p>
-  </div>
-</div>
+        <div className={styles.imageWrapper}>
+          <Image 
+            src="/people.png"
+            alt="Fondo de Limpiezas Integrales"
+            fill
+            priority
+            style={{ objectFit: 'cover' }}
+          />
+          <div className={styles.blueOverlay}></div>
+        </div>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>Integra Clean</h1>
+          <p className={styles.heroSubtitle}>
+            Limpieza profesional y compromiso garantizado
+          </p>
+        </div>
+      </div>
 
       {/* Sección de Servicios */}
       <div className={styles.servicesSection}>
@@ -98,7 +98,7 @@ const Home = () => {
             }
           ].map((item, index) => (
             <div key={index} className={styles.benefitCard}>
-              <div className={`${styles.benefitIcon} ${item.animation}`} style={{ color: item.color }}>
+              <div className={`${styles.benefitIcon} ${styles[item.animation]}`} style={{ color: item.color }}>
                 {item.icon}
               </div>
               <h3 className={styles.benefitTitle}>{item.title}</h3>
@@ -115,7 +115,3 @@ const Home = () => {
 
 export default Home;
 
-  );
-};
-
-export default Home;
