@@ -40,7 +40,7 @@ const Header = ({ titleHero, isSingle }) => {
               { href: "/quienes-somos", label: "Quiénes Somos" },
               { href: "/mision", label: "Nuestra Misión" },
               { href: "/galeria", label: "Galería" },
-              { href: "/blog", label: "Blog" },
+              { href: "https://sites.google.com/view/integraclean/blog", label: "Blog" },
               { href: "/contacto", label: "Contacto" },
             ].map(({ href, label }) => (
               <li key={href}>
