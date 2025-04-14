@@ -68,17 +68,7 @@
   transform: scale(1.15);
 }
 
-/* Mensaje debajo del botón (nuevo) */
-.liveMessage {
-  font-size: 13px;
-  font-weight: 600;
-  color: white;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 6px 12px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: pulse 2s infinite;
-}
+
 
 /* Animación para el mensaje */
 @keyframes pulse {
@@ -111,8 +101,4 @@
     height: 60px;
   }
   
-  .liveMessage {
-    font-size: 12px;
-    padding: 4px 10px;
-  }
 }
