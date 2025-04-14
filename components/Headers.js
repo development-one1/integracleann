@@ -9,45 +9,48 @@ const Header = ({ titleHero, isSingle }) => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
+        {/* Logo ajustado */}
         <div className={styles.logo}>
           <Link href="/" legacyBehavior>
             <a>
               <Image
-                className={styles.imagen}
                 src="/clean.png"
                 alt="Logo de Limpiezas Integrales"
-                width={150}
-                height={100}
+                width={180}  // Tamaño reducido
+                height={150}  // Proporción ajustable según tu logo
                 priority
+                className={styles.imagen}
               />
             </a>
           </Link>
         </div>
 
-        {/* Hamburguesa solo en móvil */}
+        {/* Menú hamburguesa */}
         <div
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menú"
         >
           ☰
         </div>
 
+        {/* Navegación */}
         <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
           <ul className={styles.navList}>
             {[
-              // { href: "/", label: "Inicio" },
               { href: "/servicios", label: "Servicios" },
               { href: "/quienes-somos", label: "Quiénes Somos" },
               { href: "/mision", label: "Nuestra Misión" },
               { href: "/galeria", label: "Galería" },
-              { href: "https://sites.google.com/view/integraclean/blog", label: "Blog" },
+              { href: "https://sites.google.com/view/integraclean/blog", label: "Blog", target: "_blank" },
               { href: "/contacto", label: "Contacto" },
-            ].map(({ href, label }) => (
+            ].map(({ href, label, target }) => (
               <li key={href}>
                 <Link href={href} legacyBehavior>
                   <a
                     className={href === "/" ? "active" : ""}
-                    onClick={() => setMenuOpen(false)} // Cierra menú al hacer clic
+                    onClick={() => setMenuOpen(false)}
+                    {...(target ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
                     {label}
                   </a>
