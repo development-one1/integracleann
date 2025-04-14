@@ -16,7 +16,6 @@ const WhatsAppButton = () => {
       <button className={styles.whatsappButton} onClick={handleClick}>
         <FaWhatsapp className={styles.icon} size={28} />
       </button>
-      <div className={styles.liveMessage}>Atención en vivo 💬</div>
     </div>
   );
 };
