@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Testimonios.module.css';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
-const TestimoniosCarrusel = () => {
+const Testimonios = () => {
   const testimonios = [
     {
       id: 1,
@@ -26,7 +26,15 @@ const TestimoniosCarrusel = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [transition, setTransition] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Auto-advance every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonio();
@@ -49,6 +57,36 @@ const TestimoniosCarrusel = () => {
     setActiveIndex(index);
   };
 
+  // Calculate card positions based on screen size
+  const getCardStyle = (index) => {
+    const position = index - activeIndex;
+    const isActive = position === 0;
+    const isMobile = windowWidth <= 768;
+    
+    if (isMobile) {
+      // Mobile - single card view
+      return {
+        transform: `translateX(${position * 100}%)`,
+        opacity: isActive ? 1 : 0,
+        zIndex: isActive ? 10 : 1,
+        transition: transition ? 'all 0.5s ease-in-out' : 'none',
+      };
+    } else {
+      // Desktop - show adjacent cards
+      const visibleRange = 1; // Show 1 card on each side
+      const isVisible = Math.abs(position) <= visibleRange;
+      
+      return {
+        transform: `translateX(${position * 90}%)`,
+        opacity: isVisible ? (isActive ? 1 : 0.6) : 0,
+        zIndex: isActive ? 10 : 5 - Math.abs(position),
+        transition: transition ? 'all 0.5s ease-in-out' : 'none',
+        scale: isActive ? '1' : '0.9',
+        pointerEvents: isVisible ? 'auto' : 'none',
+      };
+    }
+  };
+
   return (
     <section className={styles.testimoniosSection} aria-label="OPINIONES DE CLIENTES">
       <div className={styles.container}>
@@ -65,36 +103,24 @@ const TestimoniosCarrusel = () => {
           
           <div className={styles.carruselContainer}>
             <div className={styles.carruselTrack}>
-              {testimonios.map((testimonio, index) => {
-                // Calcula la posición relativa para mostrar varios testimonios
-                const position = index - activeIndex;
-                const isActive = position === 0;
-                const isVisible = Math.abs(position) <= 1; // Muestra el activo y 1 adyacente
-
-                return (
-                  <div 
-                    key={testimonio.id}
-                    className={`${styles.testimonioCard} ${
-                      isActive ? styles.active : styles.inactive
-                    }`}
-                    style={{
-                      transform: `translateX(${position * 100}%)`,
-                      opacity: isVisible ? 1 : 0,
-                      zIndex: isActive ? 10 : 1,
-                      transition: transition ? 'all 0.5s ease-in-out' : 'none',
-                      scale: isActive ? '1' : '0.9'
-                    }}
-                    aria-hidden={!isVisible}
-                  >
-                    <div className={styles.contenidoTestimonio}>
-                      <p className={styles.textoTestimonio}>"{testimonio.texto}"</p>
-                      <div className={styles.firmaTestimonio}>
-                        <span className={styles.nombreCliente}>{testimonio.nombre}</span>
-                      </div>
+              {testimonios.map((testimonio, index) => (
+                <div 
+                  key={testimonio.id}
+                  className={`${styles.testimonioCard} ${
+                    index === activeIndex ? styles.active : styles.inactive
+                  }`}
+                  style={getCardStyle(index)}
+                  aria-hidden={index !== activeIndex}
+                  onClick={() => !(index === activeIndex) && goToTestimonio(index)}
+                >
+                  <div className={styles.contenidoTestimonio}>
+                    <p className={styles.textoTestimonio}>"{testimonio.texto}"</p>
+                    <div className={styles.firmaTestimonio}>
+                      <span className={styles.nombreCliente}>{testimonio.nombre}</span>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
           
@@ -124,4 +150,4 @@ const TestimoniosCarrusel = () => {
   );
 };
 
-export default TestimoniosCarrusel;
+export default Testimonios;
