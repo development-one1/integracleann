@@ -91,6 +91,54 @@ const GadgetImagenes = () => {
       alt: "Comedor después",
       titulo: "Comedor - DESPUÉS",
     },
+    {
+      id: 15,
+      src: "/despues/despues3.jpeg",
+      alt: "Cocina después",
+      titulo: "Cocina - DESPUÉS",
+    },
+    {
+      id: 16,
+      src: "/despues/despues4.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    },
+    {
+      id: 17,
+      src: "/despues/despues5.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    },
+    {
+      id: 18,
+      src: "/despues/despues6.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    },
+    {
+      id: 19,
+      src: "/despues/despues7.jpeg",
+      alt: "Cocina después",
+      titulo: "Cocina - DESPUÉS",
+    },
+    {
+      id: 20,
+      src: "/despues/despues8.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    },
+    {
+      id: 21,
+      src: "/despues/despues9.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    },
+    {
+      id: 22,
+      src: "/despues/despues10.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    }
     // Agrega más imágenes después aquí si las tienes...
   ];
 
