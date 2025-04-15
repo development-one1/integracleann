@@ -3,20 +3,18 @@ import Image from "next/image";
 import styles from "../styles/Gadget.module.css";
 
 const GadgetImagenes = () => {
-  const imagenes = [
+  const imagenesAntes = [
     {
       id: 1,
       src: "/antes/antes1.jpeg",
       alt: "Cocina antes",
       titulo: "Cocina - ANTES",
-
     },
     {
       id: 2,
       src: "/antes/antes2.jpeg",
       alt: "Comedor antes",
       titulo: "Comedor - ANTES",
-      
     },
     {
       id: 3,
@@ -29,9 +27,7 @@ const GadgetImagenes = () => {
       src: "/antes/antes4.jpeg",
       alt: "Habitación principal antes",
       titulo: "Habitación Principal - ANTES",
-      
     },
-
     {
       id: 5,
       src: "/antes/antes5.jpeg",
@@ -79,18 +75,33 @@ const GadgetImagenes = () => {
       src: "/antes/antes12.jpeg",
       alt: "Habitación principal antes",
       titulo: "Habitación Principal - ANTES",
-    }
-    // Puedes agregar más imágenes aquí
+    },
+  ];
+
+  const imagenesDespues = [
+    {
+      id: 13,
+      src: "/despues/despues1.jpeg",
+      alt: "Cocina después",
+      titulo: "Cocina - DESPUÉS",
+    },
+    {
+      id: 14,
+      src: "/despues/despues2.jpeg",
+      alt: "Comedor después",
+      titulo: "Comedor - DESPUÉS",
+    },
+    // Agrega más imágenes después aquí si las tienes...
   ];
 
   return (
     <div className={styles.gadgetContainer}>
       <h2 className={styles.gadgetTitle}>Galería</h2>
       <p>Conoce más sobre nuestros trabajos realizados.</p>
-      <p className={styles.gadgetSubtitle}>Antes:</p>
 
+      <p className={styles.gadgetSubtitle}>Antes:</p>
       <div className={styles.gadgetGrid}>
-        {imagenes.map((item) => (
+        {imagenesAntes.map((item) => (
           <div key={item.id} className={styles.gadgetCard}>
             <div className={styles.imageContainer}>
               <Image
@@ -105,8 +116,26 @@ const GadgetImagenes = () => {
                 <span className={styles.productTitle}>{item.titulo}</span>
               </div>
             </div>
-            <div className={styles.gadgetInfo}>
-              <p className={styles.description}>{item.descripcion}</p>
+          </div>
+        ))}
+      </div>
+
+      <p className={styles.gadgetSubtitle}>Después:</p>
+      <div className={styles.gadgetGrid}>
+        {imagenesDespues.map((item) => (
+          <div key={item.id} className={styles.gadgetCard}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={50}
+                height={50}
+                className={styles.gadgetImage}
+                layout="responsive"
+              />
+              <div className={styles.overlay}>
+                <span className={styles.productTitle}>{item.titulo}</span>
+              </div>
             </div>
           </div>
         ))}
@@ -116,4 +145,5 @@ const GadgetImagenes = () => {
 };
 
 export default GadgetImagenes;
+
 
