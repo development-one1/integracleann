@@ -9,7 +9,7 @@ import {
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import Comentarios from "./Comentarios";
+import Testimonios from "./Testimonios";
 import styles from '../styles/index.module.css';
 import QuienesSomos from './QuienesSomos';
 
@@ -61,11 +61,11 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}> {/* Cambiado a <main> para semántica HTML5 */}
       <CookieBanner />
 
-      {/* Sección Hero con fondo local */}
-      <div className={styles.heroSection}>
+      {/* ==================== SECCIÓN HERO ==================== */}
+      <section className={styles.heroSection} aria-label="PRESENTACIÓN PRINCIPAL">
         <div className={styles.imageWrapper}>
           <Image 
             src="/people.png"
@@ -77,28 +77,28 @@ const Home = () => {
           <div className={styles.blueOverlay}></div>
         </div>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Limpieza que inspira confianza</h1>
+          <h1 className={styles.heroTitle}>LIMPEZA QUE INSPIRA CONFIANZA</h1>
           <p className={styles.heroSubtitle}>
-            Limpieza profesional y compromiso garantizado
+            LIMPIEZA PROFESIONAL Y COMPROMISO GARANTIZADO
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Sección de Beneficios */}
-      <div className={styles.benefitsGrid}>
+      {/* ==================== SECCIÓN BENEFICIOS ==================== */}
+      <section className={styles.benefitsGrid} aria-label="NUESTROS BENEFICIOS">
         {/* Tarjeta 1 - Presupuesto */}
         <div className={styles.benefitCard}>
           <div className={styles.benefitIcon}>
             <ReceiptLongIcon fontSize="large" />
           </div>
-          <h3 className={styles.benefitTitle}>Presupuesto <br/>Personalizado</h3>
+          <h3 className={styles.benefitTitle}>PRESUPUESTO <br/>PERSONALIZADO</h3>
           <p className={styles.benefitText}>
             Ofrecemos soluciones de limpieza a medida, que se ajustan a tus necesidades y presupuesto.
           </p>
           <button 
             onClick={() => manejarSolicitudCotizacion(1)}
             className={styles.botonPresupuesto}
-            aria-label="Solicitar presupuesto personalizado"
+            aria-label="SOLICITAR PRESUPUESTO PERSONALIZADO"
           >
             Solicitar Presupuesto
           </button>
@@ -109,14 +109,14 @@ const Home = () => {
           <div className={styles.benefitIcon}>
             <CleanHandsIcon fontSize="large" />
           </div>
-          <h3 className={styles.benefitTitle}>Calidad de Servicio</h3>
+          <h3 className={styles.benefitTitle}>CALIDAD DE SERVICIO</h3>
           <p className={styles.benefitText}>
             La calidad de servicio de IntegraClean proviene de años de experiencia y un enfoque profesional en cada detalle.
           </p>
           <button 
             onClick={() => manejarSolicitudCotizacion(1)}
             className={styles.botonPresupuesto}
-            aria-label="Solicitar información sobre calidad de servicio"
+            aria-label="SOLICITAR INFORMACIÓN SOBRE CALIDAD DE SERVICIO"
           >
             Solicitar Presupuesto
           </button>
@@ -127,26 +127,30 @@ const Home = () => {
           <div className={styles.benefitIcon}>
             <Diversity3Icon fontSize="large" />
           </div>
-          <h3 className={styles.benefitTitle}>Equipo Experto</h3>
+          <h3 className={styles.benefitTitle}>EQUIPO EXPERTO</h3>
           <p className={styles.benefitText}>
             Nuestra experiencia se potencia gracias a un equipo humano comprometido y altamente capacitado.
           </p>
           <button 
             onClick={() => manejarSolicitudCotizacion(1)}
             className={styles.botonPresupuesto}
-            aria-label="Solicitar información sobre nuestro equipo"
+            aria-label="SOLICITAR INFORMACIÓN SOBRE NUESTRO EQUIPO"
           >
             Solicitar Presupuesto
           </button>
         </div>
-      </div>
+      </section>
 
-      {/* Sección: Compromiso y excelencia */}
-      <QuienesSomos />
+      {/* ==================== SECCIÓN QUIÉNES SOMOS ==================== */}
+      <section aria-label="SOBRE NOSOTROS">
+        <QuienesSomos />
+      </section>
 
-      {/* Sección de Comentarios */}
-      <Comentarios />
-    </div>
+      {/* ==================== SECCIÓN COMENTARIOS ==================== */}
+      <section aria-label="OPINIONES DE CLIENTES">
+        <Testimonios />
+      </section>
+    </main>
   );
 };
 
