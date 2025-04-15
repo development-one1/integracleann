@@ -1,0 +1,157 @@
+/* Estilos generales */
+.testimoniosSection {
+    background-color: #f9f9f9;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .tituloSeccion {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Contenedor del carrusel */
+  .carruselWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .carruselContainer {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carruselTrack {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Tarjetas de testimonio */
+  .testimonioCard {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+  }
+  
+  .testimonioCard.active {
+    z-index: 10;
+    transform: translateX(0) scale(1);
+    opacity: 1 !important;
+  }
+  
+  .testimonioCard.inactive {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  .testimonioCard.inactive:hover {
+    opacity: 0.9;
+  }
+  
+  .textoTestimonio {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  .firmaTestimonio {
+    text-align: center;
+  }
+  
+  .nombreCliente {
+    font-weight: bold;
+    color: #0abdd1;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  /* Controles de navegación */
+  .navButton {
+    background: #0abdd1;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 20;
+    flex-shrink: 0;
+  }
+  
+  .navButton:hover {
+    background: #0899a9;
+    transform: scale(1.1);
+  }
+  
+  /* Puntos de navegación */
+  .puntosNavegacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 10px;
+  }
+  
+  .punto {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .punto.active {
+    background: #0abdd1;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tituloSeccion {
+      font-size: 1.5rem;
+    }
+    
+    .testimonioCard {
+      width: 90%;
+      left: 5%;
+      padding: 1.5rem;
+    }
+    
+    .navButton {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .carruselTrack {
+      height: 350px;
+    }
+  }
