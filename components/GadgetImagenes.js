@@ -67,6 +67,18 @@ const GadgetImagenes = () => {
       src: "/antes/antes10.jpeg",
       alt: "Habitación principal antes",
       titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 11,
+      src: "/antes/antes11.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 12,
+      src: "/antes/antes12.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
     }
     // Puedes agregar más imágenes aquí
   ];
