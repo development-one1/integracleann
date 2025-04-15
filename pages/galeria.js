@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout'
-import GallerySection from '../components/GallerySection';
+// import GadgetImagenes from '../components/GadgetImagenes';
+
 
 const GaleriaPage = () => {
   return (
     <Layout>
-      <GallerySection />
-
+      {/* <GadgetImagenes /> */}
     </Layout>
   );
 };
