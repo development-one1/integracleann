@@ -1,18 +1,19 @@
-// Importaciones material ui:
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import CleanHandsIcon from '@mui/icons-material/CleanHands';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
 
-import { useState, useEffect, useRef } from 'react';
+// Importaciones de Material-UI
+import { 
+  ReceiptLong as ReceiptLongIcon,
+  CleanHands as CleanHandsIcon,
+  Diversity3 as Diversity3Icon 
+} from '@mui/icons-material';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
 
 import Comentarios from "./Comentarios";
 import styles from '../styles/index.module.css';
 import QuienesSomos from './QuienesSomos';
 
 const Home = () => {
-  const videoRef = useRef(null);
   const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
   const emailDestino = "mariaelena.zamora@gmail.com";
 
@@ -48,7 +49,11 @@ const Home = () => {
     return (
       <div className={styles.cookieBanner}>
         <span>Usamos cookies para mejorar tu experiencia.</span>
-        <button onClick={acceptCookies} className={styles.cookieButton}>
+        <button 
+          onClick={acceptCookies} 
+          className={styles.cookieButton}
+          aria-label="Aceptar cookies"
+        >
           Aceptar
         </button>
       </div>
@@ -83,54 +88,66 @@ const Home = () => {
       <div className={styles.benefitsGrid}>
         {/* Tarjeta 1 - Presupuesto */}
         <div className={styles.benefitCard}>
-          <div className={styles.benefitIcon} style={{ color: '#0abdd1' }}>
-            <ReceiptLongIcon sx={{ fontSize: 48 }} />
+          <div className={styles.benefitIcon}>
+            <ReceiptLongIcon fontSize="large" />
           </div>
           <h3 className={styles.benefitTitle}>Presupuesto <br/>Personalizado</h3>
           <p className={styles.benefitText}>
             Ofrecemos soluciones de limpieza a medida, que se ajustan a tus necesidades y presupuesto.
           </p>
-          {servicios.map(servicio => (
-            <button 
-              key={servicio.id}
-              onClick={() => manejarSolicitudCotizacion(servicio.id)}
-              className={styles.botonPresupuesto}
-            >
-              Solicitar Presupuesto
-            </button>
-          ))}
+          <button 
+            onClick={() => manejarSolicitudCotizacion(1)}
+            className={styles.botonPresupuesto}
+            aria-label="Solicitar presupuesto personalizado"
+          >
+            Solicitar Presupuesto
+          </button>
         </div>
 
         {/* Tarjeta 2 - Calidad */}
         <div className={styles.benefitCard}>
-          <div className={styles.benefitIcon} style={{ color: '#0abdd1' }}>
-            <CleanHandsIcon sx={{ fontSize: 48 }}/> 
+          <div className={styles.benefitIcon}>
+            <CleanHandsIcon fontSize="large" />
           </div>
           <h3 className={styles.benefitTitle}>Calidad de Servicio</h3>
           <p className={styles.benefitText}>
             La calidad de servicio de IntegraClean proviene de años de experiencia y un enfoque profesional en cada detalle.
           </p>
+          <button 
+            onClick={() => manejarSolicitudCotizacion(1)}
+            className={styles.botonPresupuesto}
+            aria-label="Solicitar información sobre calidad de servicio"
+          >
+            Solicitar Presupuesto
+          </button>
         </div>
 
         {/* Tarjeta 3 - Equipo */}
         <div className={styles.benefitCard}>
-          <div className={styles.benefitIcon} style={{ color: '#0abdd1' }}>
-            <Diversity3Icon sx={{ fontSize: 48 }} />
+          <div className={styles.benefitIcon}>
+            <Diversity3Icon fontSize="large" />
           </div>
           <h3 className={styles.benefitTitle}>Equipo Experto</h3>
           <p className={styles.benefitText}>
             Nuestra experiencia se potencia gracias a un equipo humano comprometido y altamente capacitado.
           </p>
+          <button 
+            onClick={() => manejarSolicitudCotizacion(1)}
+            className={styles.botonPresupuesto}
+            aria-label="Solicitar información sobre nuestro equipo"
+          >
+            Solicitar Presupuesto
+          </button>
         </div>
       </div>
 
       {/* Sección: Compromiso y excelencia */}
-        <QuienesSomos />
+      <QuienesSomos />
 
+      {/* Sección de Comentarios */}
       <Comentarios />
     </div>
   );
 };
 
 export default Home;
-
