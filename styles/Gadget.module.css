@@ -1,0 +1,41 @@
+.gadgetContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gadgetGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas en el primer nivel (horizontal) */
+  gap: 20px;
+}
+
+.gadgetCard {
+  background-color: #f4f4f4;
+  border-radius: none;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.gadgetImage {
+  object-fit: contain;
+  border-radius: none;
+}
+
+@media (max-width: 768px) {
+  .gadgetGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en dispositivos pequeños */
+  }
+}
+
+@media (max-width: 480px) {
+  .gadgetGrid {
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+  }
+}
