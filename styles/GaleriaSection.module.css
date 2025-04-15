@@ -71,26 +71,18 @@
 
 .cardContenido h2 {
   font-size: 1.2rem;
-  color: #2A5CAA;
+  color: #000000;
   margin: 0;
 }
 
 .cardContenido p {
-  color: #555;
+  color: #353333;
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.4;
 }
 
-.etiqueta {
-  background-color: #f0f7ff;
-  color: #2A5CAA;
-  font-weight: 500;
-  padding: 0.5rem 0.8rem;
-  font-size: 0.85rem;
-  border-radius: 6px;
-  align-self: flex-start;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
