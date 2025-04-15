@@ -31,6 +31,43 @@ const GadgetImagenes = () => {
       titulo: "Habitación Principal - ANTES",
       
     },
+
+    {
+      id: 5,
+      src: "/antes/antes5.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 6,
+      src: "/antes/antes6.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 7,
+      src: "/antes/antes7.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 8,
+      src: "/antes/antes8.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 9,
+      src: "/antes/antes9.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    },
+    {
+      id: 10,
+      src: "/antes/antes10.jpeg",
+      alt: "Habitación principal antes",
+      titulo: "Habitación Principal - ANTES",
+    }
     // Puedes agregar más imágenes aquí
   ];
 
@@ -67,3 +104,4 @@ const GadgetImagenes = () => {
 };
 
 export default GadgetImagenes;
+
