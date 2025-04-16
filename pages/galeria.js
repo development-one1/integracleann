@@ -6,7 +6,9 @@ import GadgetImagenes from '../components/GadgetImagenes';
 const GaleriaPage = () => {
   return (
     <Layout>
+      <br />
       <GadgetImagenes />
+      <br />
     </Layout>
   );
 };
