@@ -8,146 +8,132 @@ const GadgetImagenes = () => {
       id: 1,
       src: "/antes/antes1.jpeg",
       alt: "Cocina antes",
-      titulo: "Cocina - ANTES",
     },
     {
       id: 2,
-      src: "/antes/antes2.jpeg",
+      src: "/despues/despues1.jpeg",
       alt: "Comedor antes",
-      titulo: "Comedor - ANTES",
     },
     {
       id: 3,
-      src: "/antes/antes3.jpeg",
+      src: "/antes/antes2.jpeg",
       alt: "Habitación individual antes",
-      titulo: "Habitación Individual - ANTES",
     },
     {
       id: 4,
-      src: "/antes/antes4.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/despues/despues2.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 5,
-      src: "/antes/antes5.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/antes/antes3.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 6,
-      src: "/antes/antes6.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/despues/despues3.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 7,
-      src: "/antes/antes7.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/antes/antes4.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 8,
-      src: "/antes/antes8.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/despues/despues4.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 9,
-      src: "/antes/antes9.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/antes/antes5.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 10,
-      src: "/antes/antes10.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/despues/despues5.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 11,
-      src: "/antes/antes11.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/antes/antes6.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 12,
-      src: "/antes/antes12.jpeg",
-      alt: "Habitación principal antes",
-      titulo: "Habitación Principal - ANTES",
+      src: "/despues/despues6.jpeg",
+      alt: "Habitación individual antes",
     },
-  ];
-
-  const imagenesDespues = [
     {
       id: 13,
-      src: "/despues/despues1.jpeg",
-      alt: "Cocina después",
-      titulo: "Cocina - DESPUÉS",
+      src: "/antes/antes7.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 14,
-      src: "/despues/despues2.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
+      src: "/despues/despues7.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 15,
-      src: "/despues/despues3.jpeg",
-      alt: "Cocina después",
-      titulo: "Cocina - DESPUÉS",
+      src: "/antes/antes8.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 16,
-      src: "/despues/despues4.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
+      src: "/despues/despues8.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 17,
-      src: "/despues/despues5.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
+      src: "/antes/antes9.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 18,
-      src: "/despues/despues6.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
+      src: "/despues/despues9.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 19,
-      src: "/despues/despues7.jpeg",
-      alt: "Cocina después",
-      titulo: "Cocina - DESPUÉS",
+      src: "/antes/antes10.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 20,
-      src: "/despues/despues8.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
+      src: "/despues/despues10.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 21,
-      src: "/despues/despues9.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
+      src: "/antes/antes11.jpeg",
+      alt: "Habitación individual antes",
     },
     {
       id: 22,
-      src: "/despues/despues10.jpeg",
-      alt: "Comedor después",
-      titulo: "Comedor - DESPUÉS",
-    }
-    // Agrega más imágenes después aquí si las tienes...
+      src: "/despues/despues11.jpeg",
+      alt: "Habitación individual antes",
+    },
+    {
+      id: 23,
+      src: "/antes/antes12.jpeg",
+      alt: "Habitación individual antes",
+    },
+    {
+      id: 24,
+      src: "/despues/despues12.jpeg",
+      alt: "Habitación individual antes",
+    },
   ];
 
   return (
     <div className={styles.gadgetContainer}>
       <h2 className={styles.gadgetTitle}>Galería</h2>
-      <p>Conoce más sobre nuestros trabajos realizados.</p>
+      <p style={{ textAlign: "center" }}>
+        Conoce más sobre nuestros trabajos realizados.
+      </p>
 
-      <p className={styles.gadgetSubtitle}>Antes:</p>
+      <p className={styles.gadgetSubtitle}>Antes y después: </p>
       <div className={styles.gadgetGrid}>
         {imagenesAntes.map((item) => (
           <div key={item.id} className={styles.gadgetCard}>
@@ -155,35 +141,15 @@ const GadgetImagenes = () => {
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={50}
-                height={50}
-                className={styles.gadgetImage}
-                layout="responsive"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 700px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className={styles.overlay}>
-                <span className={styles.productTitle}>{item.titulo}</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <p className={styles.gadgetSubtitle}>Después:</p>
-      <div className={styles.gadgetGrid}>
-        {imagenesDespues.map((item) => (
-          <div key={item.id} className={styles.gadgetCard}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={50}
-                height={50}
-                className={styles.gadgetImage}
-                layout="responsive"
-              />
-              <div className={styles.overlay}>
-                <span className={styles.productTitle}>{item.titulo}</span>
-              </div>
+              {item.titulo && (
+                <div className={styles.overlay}>
+                  <span className={styles.productTitle}>{item.titulo}</span>
+                </div>
+              )}
             </div>
           </div>
         ))}
