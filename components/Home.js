@@ -129,7 +129,7 @@ const Home = () => {
           </div>
           <h3 className={styles.benefitTitle}>EQUIPO EXPERTO</h3>
           <p className={styles.benefitText}>
-            Nuestra experiencia se potencia gracias a un equipo humano comprometido y altamente capacitado.
+            NUESTRA EXPERIENCIA SE POTENCIA GRACIAS A UN EQUIPO HUMANO COMPROMETIDO Y ALTAMENTE CAPACITADO.
           </p>
           <button 
             onClick={() => manejarSolicitudCotizacion(1)}
