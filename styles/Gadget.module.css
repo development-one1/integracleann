@@ -1,41 +1,87 @@
 .gadgetContainer {
-  padding: 20px;
+  padding: 10px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 ;
+}
+
+.gadgetTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.gadgetSubtitle {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem 0;
+
+  color: #444;
 }
 
 .gadgetGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas en el primer nivel (horizontal) */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  justify-items: center;
 }
 
 .gadgetCard {
-  background-color: #f4f4f4;
-  border-radius: none;
+  background-color: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.gadgetCard:hover {
+  transform: scale(1.03);
 }
 
 .imageContainer {
   position: relative;
-  overflow: hidden;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 4/3;
 }
 
 .gadgetImage {
-  object-fit: contain;
-  border-radius: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (max-width: 768px) {
-  .gadgetGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en dispositivos pequeños */
-  }
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
+.productTitle {
+  margin: 0;
+}
+
+/* Responsive para móvil */
 @media (max-width: 480px) {
   .gadgetGrid {
-    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gadgetCard {
+    max-width: 100%;
+  }
+
+  .overlay {
+    font-size: 0.9rem;
+    padding: 6px;
   }
 }
+
