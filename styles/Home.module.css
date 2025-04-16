@@ -1,7 +1,7 @@
 /* Header Styles */
 .header {
   /* Variables de colores y transición */
-  --primary-color: #007bff;
+  --primary-color: #88E8F2;
   --dark-color: #222;
   --gray-color: #666;
   --transition: all 0.3s ease;
@@ -12,20 +12,18 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 100); /* Opacidad actual: 100% */
+  background: rgba(255, 255, 255, 100);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
 }
 
 .headerScrolled {
-  /* Estilo del header al hacer scroll */
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   padding: 10px 0;
 }
 
 .container {
-  /* Contenedor central para alinear contenido */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -34,70 +32,65 @@
   align-items: center;
 }
 
+.logo {
+  position: relative;
+  z-index: 10;
+}
+
 .logo h1 {
-  /* Título del logo */
   font-size: 1.8rem;
   color: var(--dark-color);
   margin-bottom: 5px;
 }
 
 .logo h1 span {
-  /* Parte destacada del logo */
   color: var(--primary-color);
 }
 
 .logo p {
-  /* Subtítulo del logo */
   font-size: 0.8rem;
   color: var(--gray-color);
 }
 
 .imagen {
-  /* Prevención de selección y arrastre de imagen */
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  object-fit: contain;
+  transition: transform 0.2s ease;
 }
 
 /* Navbar base (desktop) */
 .navbar {
-  /* Contenedor del menú */
   display: flex;
   align-items: center;
 }
 
 .navList {
-  /* Lista de navegación horizontal */
   display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 20px 0;
+  gap: 12px;
 }
 
 .navList li {
-  /* Separación entre ítems del menú */
-  margin-left: 30px;
+  margin: 0;
 }
 
 .navList a {
-  /* Estilo base de enlaces del menú */
   text-decoration: none;
   color: var(--dark-color);
-  font-weight: 600;
+  font-weight: 700;
   transition: var(--transition);
   position: relative;
+  font-size: 1rem;
 }
 
 .navList a:hover,
 .navList a.active {
-  /* Efecto hover y activo en menú */
   color: var(--primary-color);
 }
 
 .navList a::after {
-  /* Línea animada debajo de enlaces */
   content: '';
   position: absolute;
   bottom: -5px;
@@ -113,33 +106,57 @@
   width: 100%;
 }
 
-/* Botón especial */
-.btnContact {
-  /* Estilo del botón de contacto */
-  padding: 8px 16px;
-  background: var(--primary-color);
-  color: #fff;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: var(--transition);
+/* Estilo especial para CONTACTO */
+.contactoItem,
+.servicios,
+.nosotros,
+.galery {
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-.btnContact:hover {
-  /* Hover del botón */
-  background: #0f62d1;
+
+.contactoItem {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-/* Hamburguesa (solo visible en móviles) */
+/* Hamburguesa */
 .hamburger {
-  /* Icono de menú hamburguesa */
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
+@media (min-width: 769px) {
+  .navList {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 30px;
+  }
+
+  .contactoItem {
+    margin-top: 0;
+    margin-left: 20px;
+    position: relative;
+  }
+
+  .contactoItem::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 1px;
+    background-color: #ddd;
+  }
+}
+
 @media (max-width: 768px) {
   .hamburger {
-    /* Posicionamiento en móviles */
     display: block;
     position: absolute;
     right: 1rem;
@@ -147,23 +164,24 @@
   }
 
   .navbar {
-    /* Menú móvil oculto inicialmente */
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
+    height: 100vh;
     background-color: white;
-    position: absolute;
-    top: 100px;
+    position: fixed;
+    top: 0;
     left: 0;
     z-index: 999;
     transition: var(--transition);
     transform: translateX(-100%);
     opacity: 0;
     align-items: flex-start;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 80px;
   }
 
   .navbar.open {
-    /* Menú móvil visible cuando abierto */
     display: flex;
     transform: translateX(0);
     opacity: 1;
@@ -171,7 +189,6 @@
   }
 
   @keyframes slideInLeft {
-    /* Animación de entrada del menú */
     from {
       transform: translateX(-100%);
       opacity: 0;
@@ -183,37 +200,23 @@
   }
 
   .navList {
-    /* Lista vertical en móviles */
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
     align-items: flex-start;
   }
 
-  .navList li {
-    margin: 0;
-  }
-
-  .navList li a::after {
-    /* Línea animada personalizada en móviles */
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1rem;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: var(--transition);
+  .navList li a {
+    padding: 0.5rem 1rem;
+    width: 100%;
   }
 
   .navList li a:hover,
   .navList li a.active {
-    /* Estilo activo en móviles */
     border-left: 4px solid var(--primary-color);
     background-color: #f9f9f9;
   }
 
-  /* Animación de la raya azul en móviles */
   .navList li a::after {
     content: '';
     position: absolute;
