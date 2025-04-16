@@ -38,11 +38,11 @@ const Header = ({ titleHero, isSingle }) => {
         <nav className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
           <ul className={styles.navList}>
             {[
-              { href: "/servicios", label: "nuestros servicios" },
-              { href: "/quienes-somos", label: "Sobre nosotros" },
-              { href: "/galeria", label: "Galería" },
-              { href: "https://sites.google.com/view/integraclean/blog", label: "Blog", target: "_blank" },
-              { href: "/contacto", label: "Contacto" },
+              { href: "/servicios", label: "NUESTROS SERVICIOS" },
+              { href: "/quienes-somos", label: "SOBRE NOSOTROS" },
+              { href: "/galeria", label: "GALERIA" },
+              { href: "https://sites.google.com/view/integraclean/blog", label: "BLOG", target: "_blank" },
+              { href: "/contacto", label: "CONTACTO" },
             ].map(({ href, label, target }) => (
               <li key={href}>
                 <Link href={href} legacyBehavior>
