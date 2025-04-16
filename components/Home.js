@@ -93,7 +93,7 @@ const Home = () => {
           </div>
           <h3 className={styles.benefitTitle}>PRESUPUESTO <br/>PERSONALIZADO</h3>
           <p className={styles.benefitText}>
-            Ofrecemos soluciones de limpieza a medida, que se ajustan a tus necesidades y presupuesto.
+            OFRECEMOS SOLUCIONES DE LIMPIEZA A MEDIDA, QUE SE AJUSTAN A TUS NECESIDADES Y PRESUPUESTO.
           </p>
           <button 
             onClick={() => manejarSolicitudCotizacion(1)}
@@ -111,7 +111,7 @@ const Home = () => {
           </div>
           <h3 className={styles.benefitTitle}>CALIDAD DE SERVICIO</h3>
           <p className={styles.benefitText}>
-            La calidad de servicio de IntegraClean proviene de años de experiencia y un enfoque profesional en cada detalle.
+            LA CALIDAD DE SERVICIO DE INTEGRACLEAN PROVIENE DE AÑOS DE EXPERIENCIA Y UN ENFOQUE PROFESIONAL EN CADA DETALLE.
           </p>
           <button 
             onClick={() => manejarSolicitudCotizacion(1)}
