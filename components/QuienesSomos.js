@@ -23,9 +23,9 @@ const QuienesSomos = () => {
           <div className={styles["qs-titulo"]}>Compromiso y excelencia</div>
           
           <div className={styles["qs-texto"]}>
-            Somos un equipo de profesionales comprometidos con los resultados de
-            excelencia que nuestros clientes requieren, con más de 20 años de
-            experiencia y un respeto absoluto por lograr metas en conjunto.
+          SOMOS UN EQUIPO DE PROFESIONALES COMPROMETIDOS CON LOS RESULTADOS DE 
+          EXCELENCIA QUE NUESTROS CLIENTES REQUIEREN, CON MÁS DE 20 AÑOS DE EXPERIENCIA
+           Y UN RESPETO ABSOLUTO POR LOGRAR METAS EN CONJUNTO.
           </div>
           
           <div className={styles["qs-stats"]}>
